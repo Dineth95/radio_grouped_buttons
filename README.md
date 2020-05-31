@@ -55,7 +55,6 @@ When It overflow container width It will be added to next line automatically.
                   buttonSpace: 5,
                   buttonColor: Colors.white,
                   selectedColor: Colors.cyan,
-                  //buttonWidth: 150,
                 ),
               ),
 ```
@@ -77,7 +76,6 @@ inside the parent widget.
                   buttonSpace: 5,
                   buttonColor: Colors.white,
                   selectedColor: Colors.cyan,
-                  //buttonWidth: 150,
                 ),
               ),
 ```
