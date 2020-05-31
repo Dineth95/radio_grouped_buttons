@@ -16,6 +16,28 @@ dependencies:
 ## Creating radio button
 Make sure You have included the parent widget with bounded like container with width and height.
 
+### All Attributes
+```
+CustomRadioButton({this.buttonLables,
+    this.buttonValues,
+    this.radioButtonValue,
+    this.buttonWidth,
+    this.buttonColor,
+    this.selectedColor,
+    this.buttonHeight,
+    this.horizontal,
+    this.enableShape,
+    this.elevation,
+    this.customShape,
+    this.fontSize,
+    this.lineSpace,
+    this.buttonSpace,
+    this.buttonBorderColor,
+    this.textColor,
+    this.selectedTextColor
+  })
+```
+
 ### creating horizontal radio button list
 When It overflow container width It will be added to next line automatically.
 
@@ -59,6 +81,8 @@ inside the parent widget.
                 ),
               ),
 ```
+
+![horizontal and vertical radio buttons](./screenshots/horizontal and vertical.gif)
 
 ### Creating Equal width vertical radio button list
 
