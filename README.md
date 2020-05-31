@@ -16,6 +16,90 @@ dependencies:
 ## Creating radio button
 Make sure You have included the parent widget with bounded like container with width and height.
 
+### creating horizontal radio button list
+When It overflow container width It will be added to next line automatically.
+
+```
+            Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 160,
+                child: CustomRadioButton(
+                  buttonLables: buttonList,
+                  buttonValues: buttonList,
+                  radioButtonValue: (value)=>print(value),
+                  horizontal: true,
+                  enableShape: true,
+                  buttonSpace: 5,
+                  buttonColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  //buttonWidth: 150,
+                ),
+              ),
 ```
 
+### creating vertical radio button list
+When It overflow container width in one line It will be automatically added to new column
+inside the parent widget.
+
+```
+            Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                child: CustomRadioButton(
+                  buttonLables: buttonList,
+                  buttonValues: buttonList,
+                  radioButtonValue: (value)=>print(value),
+                  enableShape: true,
+                  buttonSpace: 5,
+                  buttonColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  //buttonWidth: 150,
+                ),
+              ),
+```
+
+### Creating Equal width vertical radio button list
+
+If you want to create the buttons with equal width and height buttonWidth and buttonHeight attributes
+are also available
+
+```
+            Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                child: CustomRadioButton(
+                  buttonLables: buttonList,
+                  buttonValues: buttonList,
+                  radioButtonValue: (value)=>print(value),
+                  enableShape: true,
+                  buttonSpace: 5,
+                  buttonColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  buttonWidth: 150,
+                ),
+              ),
+```
+
+### creating equal width horizontal button list
+
+```
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    width: MediaQuery.of(context).size.width,
+                    height: 250,
+                    child: CustomRadioButton(
+                      buttonLables: buttonList,
+                      buttonValues: buttonList,
+                      radioButtonValue: (value)=>print(value),
+                      horizontal: true,
+                      enableShape: true,
+                      buttonSpace: 5,
+                      buttonColor: Colors.white,
+                      selectedColor: Colors.cyan,
+                      buttonWidth: 150,
+                    ),
+                  )
 ```
