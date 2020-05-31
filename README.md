@@ -82,7 +82,7 @@ inside the parent widget.
               ),
 ```
 
-![horizontal and vertical radio buttons]()
+![horizontal and vertical radio buttons](/screenshots/horizontal and vertical.gif)
 
 ### Creating Equal width vertical radio button list
 
