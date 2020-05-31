@@ -10,3 +10,4 @@ This is a smart flutter widget that is fully customizable for radio button group
      * radio buttons vertical
      * radio buttons equal width and height
 
+## [1.0.0] - 30/05/2020
