@@ -10,7 +10,7 @@ are customizable.
 ## Installing
 ```
 dependencies:
-    radio_grouped_buttons: 0.0.1
+    radio_grouped_buttons: 1.0.0
 ```
 
 ## Creating radio button
