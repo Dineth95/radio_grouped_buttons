@@ -11,3 +11,5 @@ This is a smart flutter widget that is fully customizable for radio button group
      * radio buttons equal width and height
 
 ## [1.0.0] - 30/05/2020
+##[1.0.0+1]- 1/07/2020
+ Readme updated and some issues fixed.
