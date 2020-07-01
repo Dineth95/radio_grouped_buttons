@@ -10,11 +10,13 @@ are customizable.
 ## Installing
 ```
 dependencies:
-    radio_grouped_buttons: 1.0.0
+    radio_grouped_buttons: 1.0.0+1
 ```
 
 ## Creating radio button
 Make sure You have included the parent widget with bounded like container with width and height.
+By Default the initial selected value is the first value of the list that you provide for the button
+value list.
 
 ### All Attributes
 ```
