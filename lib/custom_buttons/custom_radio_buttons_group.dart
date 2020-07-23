@@ -17,6 +17,7 @@ class CustomRadioButton extends StatefulWidget {
     this.lineSpace = 5,
     this.buttonSpace,
     this.buttonBorderColor = const Color(0xFF2594B22B),
+    this.unselectedButtonBorderColor = const Color(0xFF2594B22B),
     this.textColor = Colors.black,
     this.selectedTextColor = Colors.white,
     this.initialSelection,
@@ -38,6 +39,7 @@ class CustomRadioButton extends StatefulWidget {
 
   final Color selectedColor;
   final Color buttonBorderColor;
+  final Color unselectedButtonBorderColor;
   final Color buttonColor;
   final Color textColor;
   final Color selectedTextColor;
@@ -85,12 +87,12 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             shape: widget.enableShape
                 ? widget.customShape == null
                     ? OutlineInputBorder(
-                        borderSide: BorderSide(color: widget.buttonBorderColor /*.withOpacity(0.1)*/, width: 1),
+                        borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables[index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       )
                     : widget.customShape
                 : OutlineInputBorder(
-                    borderSide: BorderSide(color: widget.buttonBorderColor /*.withOpacity(0.1)*/, width: 1),
+                    borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables[index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
                     borderRadius: BorderRadius.zero,
                   ),
             onPressed: () {
@@ -136,12 +138,12 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             shape: widget.enableShape
                 ? widget.customShape == null
                     ? OutlineInputBorder(
-                        borderSide: BorderSide(color: widget.buttonBorderColor, width: 1),
+                        borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables[index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       )
                     : widget.customShape
                 : OutlineInputBorder(
-                    borderSide: BorderSide(color: widget.buttonBorderColor, width: 1),
+                    borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables[index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
                     borderRadius: BorderRadius.zero,
                   ),
             onPressed: () {
