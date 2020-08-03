@@ -20,7 +20,7 @@ class CustomRadioButton extends StatefulWidget {
     this.unselectedButtonBorderColor = const Color(0xFF2594B22B),
     this.textColor = Colors.black,
     this.selectedTextColor = Colors.white,
-    this.initialSelection,
+    this.initialSelection=0,
   })  : assert(buttonLables.length == buttonValues.length),
         assert(buttonLables.length > initialSelection),
         assert(buttonColor != null),

@@ -51,7 +51,10 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                 child: CustomRadioButton(
                   buttonLables: buttonList,
                   buttonValues: buttonList,
-                  radioButtonValue: (value)=>print(value),
+                  radioButtonValue: (value,index){
+                    print("Button value "+value.toString());
+                    print("Integer value "+index.toString());
+                  },
                   horizontal: true,
                   enableShape: true,
                   buttonSpace: 5,
@@ -72,7 +75,10 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                 child: CustomRadioButton(
                   buttonLables: buttonList,
                   buttonValues: buttonList,
-                  radioButtonValue: (value)=>print(value),
+                  radioButtonValue: (value,index){
+                    print("Button value "+value.toString());
+                    print("Integer value "+index.toString());
+                  },
                   enableShape: true,
                   buttonSpace: 5,
                   buttonColor: Colors.white,
@@ -92,7 +98,10 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                 child: CustomRadioButton(
                   buttonLables: buttonList,
                   buttonValues: buttonList,
-                  radioButtonValue: (value)=>print(value),
+                  radioButtonValue: (value,index){
+                    print("Button value "+value.toString());
+                    print("Integer value "+index.toString());
+                  },
                   enableShape: true,
                   buttonSpace: 5,
                   buttonColor: Colors.white,
@@ -112,7 +121,10 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                 child: CustomRadioButton(
                   buttonLables: buttonList,
                   buttonValues: buttonList,
-                  radioButtonValue: (value)=>print(value),
+                  radioButtonValue: (value,index){
+                    print("Button value "+value.toString());
+                    print("Integer value "+index.toString());
+                  },
                   horizontal: true,
                   enableShape: true,
                   buttonSpace: 5,
@@ -120,7 +132,32 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                   selectedColor: Colors.cyan,
                   buttonWidth: 150,
                 ),
+              ),
+
+              //Initial Value selection
+              Text("Set the Initial selected value as the third button"),
+              ///use this widget in bounded parent widget
+              Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                child: CustomRadioButton(
+                  buttonLables: buttonList,
+                  buttonValues: buttonList,
+                  radioButtonValue: (value,index){
+                    print("Button value "+value.toString());
+                    print("Integer value "+index.toString());
+                  },
+                  horizontal: true,
+                  enableShape: true,
+                  buttonSpace: 5,
+                  initialSelection: 2,
+                  buttonColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  buttonWidth: 150,
+                ),
               )
+
             ],
           ),
         ),
