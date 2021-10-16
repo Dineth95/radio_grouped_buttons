@@ -1,6 +1,6 @@
 name: radio_grouped_buttons
 description: New Grouped Radio Buttons Widget. Using this widget grouping and electing list of amout buttons will be easy.
-version: 1.0.0+2
+version: 1.0.1
 homepage: https://github.com/Dineth95/radio_grouped_buttons
 
 environment:

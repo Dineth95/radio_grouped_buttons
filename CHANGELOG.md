@@ -16,3 +16,6 @@ This is a smart flutter widget that is fully customizable for radio button group
 ## [1.0.0+2]- 2/08/2020
 * Added the default value Configuration.
 * Added Unselected Button Bordercolor attribute
+
+## [1.0.1]- 17/10/2021
+* Added null safety
