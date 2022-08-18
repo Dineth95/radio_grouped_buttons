@@ -6,6 +6,10 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+task wrapper(type: Wrapper){
+    gradleVersion = '7.5.1'
+}
+
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")

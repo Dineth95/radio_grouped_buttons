@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomRadioButton extends StatefulWidget {
   CustomRadioButton({
     this.buttonLables,
+    this.buttonIcon,
     this.buttonValues,
     this.radioButtonValue,
     this.buttonWidth,
@@ -31,6 +32,7 @@ class CustomRadioButton extends StatefulWidget {
   final List? buttonValues;
   final double buttonSpace;
   final double buttonHeight;
+  final String? buttonIcon;
 
   final double lineSpace;
   final List<String>? buttonLables;
@@ -74,10 +76,10 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
         elevation: widget.elevation,
         shape: widget.enableShape
             ? widget.customShape == null
-                ? RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  )
-                : widget.customShape
+            ? RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+        )
+            : widget.customShape
             : null,
         child: Container(
           height: widget.buttonHeight,
@@ -86,15 +88,15 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
           child: MaterialButton(
             shape: widget.enableShape
                 ? widget.customShape == null
-                    ? OutlineInputBorder(
-                        borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      )
-                    : widget.customShape
+                ? OutlineInputBorder(
+              borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            )
+                : widget.customShape
                 : OutlineInputBorder(
-                    borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
-                    borderRadius: BorderRadius.zero,
-                  ),
+              borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor /*.withOpacity(0.1)*/, width: 1),
+              borderRadius: BorderRadius.zero,
+            ),
             onPressed: () {
               widget.radioButtonValue!(widget.buttonValues![index], index);
               setState(() {
@@ -102,13 +104,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 currentSelectedLabel = widget.buttonLables![index];
               });
             },
-            child: Text(
-              widget.buttonLables![index],
-              style: TextStyle(
-                color: currentSelectedLabel == widget.buttonLables![index] ? widget.selectedTextColor : widget.textColor,
-                fontSize: widget.fontSize,
-              ),
-            ),
+            child: Image.asset(widget.buttonIcon! ),
           ),
         ),
       );
@@ -125,10 +121,10 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
         elevation: widget.elevation,
         shape: widget.enableShape
             ? widget.customShape == null
-                ? RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  )
-                : widget.customShape
+            ? RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+        )
+            : widget.customShape
             : null,
         child: Container(
           height: widget.buttonHeight,
@@ -137,15 +133,15 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
           child: MaterialButton(
             shape: widget.enableShape
                 ? widget.customShape == null
-                    ? OutlineInputBorder(
-                        borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      )
-                    : widget.customShape
+                ? OutlineInputBorder(
+              borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            )
+                : widget.customShape
                 : OutlineInputBorder(
-                    borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
-                    borderRadius: BorderRadius.zero,
-                  ),
+              borderSide: BorderSide(color: currentSelectedLabel == widget.buttonLables![index] ? widget.buttonBorderColor : widget.unselectedButtonBorderColor, width: 1),
+              borderRadius: BorderRadius.zero,
+            ),
             onPressed: () {
               widget.radioButtonValue!(widget.buttonValues![index], index);
               setState(() {
@@ -153,13 +149,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 currentSelectedLabel = widget.buttonLables![index];
               });
             },
-            child: Text(
-              widget.buttonLables![index],
-              style: TextStyle(
-                color: currentSelectedLabel == widget.buttonLables![index] ? widget.selectedTextColor : widget.textColor,
-                fontSize: widget.fontSize,
-              ),
-            ),
+            child:  Image.asset(widget.buttonIcon!),
           ),
         ),
       );
@@ -172,15 +162,15 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
   Widget build(BuildContext context) {
     return widget.horizontal
         ? Wrap(
-            spacing: widget.buttonSpace, // gap between adjacent chips
-            runSpacing: widget.lineSpace,
-            children: buildButtonsColumn(),
-          )
+      spacing: widget.buttonSpace, // gap between adjacent chips
+      runSpacing: widget.lineSpace,
+      children: buildButtonsColumn(),
+    )
         : Wrap(
-            direction: Axis.vertical,
-            spacing: widget.buttonSpace, // gap between adjacent chips
-            runSpacing: widget.lineSpace,
-            children: buildButtonsRow(),
-          );
+      direction: Axis.vertical,
+      spacing: widget.buttonSpace, // gap between adjacent chips
+      runSpacing: widget.lineSpace,
+      children: buildButtonsRow(),
+    );
   }
 }
