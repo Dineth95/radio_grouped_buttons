@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomRadioButton extends StatefulWidget {
   CustomRadioButton({
     this.buttonLables,
-    this.buttonIcon,
+    this.assetString,
     this.buttonValues,
     this.radioButtonValue,
     this.buttonWidth,
@@ -32,10 +32,10 @@ class CustomRadioButton extends StatefulWidget {
   final List? buttonValues;
   final double buttonSpace;
   final double buttonHeight;
-  final String? buttonIcon;
 
   final double lineSpace;
   final List<String>? buttonLables;
+  final List<String>? assetString;
 
   final Function(dynamic, int)? radioButtonValue;
 
@@ -104,7 +104,18 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 currentSelectedLabel = widget.buttonLables![index];
               });
             },
-            child: Image.asset(widget.buttonIcon! ),
+            child: Column(
+              children: [
+                Image.asset(widget.assetString![index]),
+                Text(
+                  widget.buttonLables![index],
+                  style: TextStyle(
+                    color: currentSelectedLabel == widget.buttonLables![index] ? widget.selectedTextColor : widget.textColor,
+                    fontSize: widget.fontSize,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -149,7 +160,19 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 currentSelectedLabel = widget.buttonLables![index];
               });
             },
-            child:  Image.asset(widget.buttonIcon!),
+            child: Column(
+              children: [
+                Image.asset(widget.assetString![index]),
+
+                Text(
+                  widget.buttonLables![index],
+                  style: TextStyle(
+                    color: currentSelectedLabel == widget.buttonLables![index] ? widget.selectedTextColor : widget.textColor,
+                    fontSize: widget.fontSize,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
