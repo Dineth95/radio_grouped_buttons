@@ -6,7 +6,6 @@ class CustomRadioButton extends StatefulWidget {
     this.images,
     this.imagesHeight,
     this.imagesWidth,
-    this.assetString,
     this.buttonValues,
     this.radioButtonValue,
     this.buttonWidth,
@@ -41,7 +40,6 @@ class CustomRadioButton extends StatefulWidget {
   final List<Image>? images;
   final double? imagesHeight;
   final double? imagesWidth;
-  final List<String>? assetString;
 
   final Function(dynamic, int)? radioButtonValue;
 
@@ -113,7 +111,6 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             child: Column(
               children: [
                 widget.images == null ? Container() : Container(height: widget.imagesHeight, width: widget.imagesWidth, child: widget.images![index]),
-                Image.asset(widget.assetString![index]),
                 Text(
                   widget.buttonLables![index],
                   style: TextStyle(
@@ -171,10 +168,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
               children: [
                 widget.images == null ? Container() : Container(height: widget.imagesHeight, width: widget.imagesWidth, child: widget.images![index]),
 
-                widget.images != null ? Container() :
-                Image.asset(widget.assetString![index]),
-
-                Text(
+                widget.images != null ? Container() :Text(
                   widget.buttonLables![index],
                   style: TextStyle(
                     color: currentSelectedLabel == widget.buttonLables![index] ? widget.selectedTextColor : widget.textColor,
