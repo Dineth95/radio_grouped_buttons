@@ -31,6 +31,8 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
   List<String> buttonList=[
       "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
+  List<Image> imagesList=[Image.asset('assets/plus.png'), Image.asset('assets/plus.png'), Image.asset('assets/plus.png'), Image.asset('assets/plus.png'), Image.asset('assets/plus.png'), Image.asset('assets/plus.png'), Image.asset('assets/plus.png'),];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -156,7 +158,29 @@ class _GroupGridRadioButtonExampleState extends State<GroupGridRadioButtonExampl
                   selectedColor: Colors.cyan,
                   buttonWidth: 150,
                 ),
-              )
+              ),
+              Text("Buttons with image assets"),
+              ///use this widget in bounded parent widget
+              Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 250,
+                child: CustomRadioButton(
+                  buttonLables: buttonList,
+                  buttonValues: buttonList,
+                  images:  imagesList,
+                  imagesHeight: 30,
+                  imagesWidth: 30,
+                  radioButtonValue: (value,index){
+
+                  },
+                  enableShape: true,
+                  buttonSpace: 5,
+                  buttonColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  buttonWidth: 150,
+                ),
+              ),
 
             ],
           ),
